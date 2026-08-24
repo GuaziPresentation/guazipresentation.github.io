@@ -21,7 +21,7 @@
 <meta property="og:url" content="https://guazipresentation.github.io/post/Markdown%20-yan-shi-%20-%20-feng-fu-de-wen-ben-ge-shi-ce-shi.html">
 <meta property="og:image" content="https://github.githubassets.com/favicons/favicon.svg">
 <title>Markdown 演示 - 丰富的文本格式测试</title>
-
+<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
 
 
 </head>
@@ -45,7 +45,17 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     body {padding: 8px;}
     .postTitle{font-size:24px;}
 }
-
+.copy-feedback {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    color: var(--color-fg-on-emphasis);
+    background-color: var(--color-fg-muted);
+    border-radius: 3px;
+    padding: 5px 8px;
+    font-size: 12px;
+}
 </style>
 
 
@@ -105,37 +115,33 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <hr>
 <h2>代码示例</h2>
 <h3>JavaScript 代码块</h3>
-<pre lang="javascript" class="notranslate"><code class="notranslate">function helloWorld() {
-  console.log('Hello, World! 🌍');
-  return true;
-}
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">function</span> <span class="pl-en">helloWorld</span><span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+  <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'Hello, World! 🌍'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-k">return</span> <span class="pl-c1">true</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span>
 
-helloWorld();
-</code></pre>
+<span class="pl-en">helloWorld</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
 <h3>Python 代码块</h3>
-<pre lang="python" class="notranslate"><code class="notranslate">def fibonacci(n):
-    """计算斐波那契数列"""
-    if n &lt;= 1:
-        return n
-    return fibonacci(n-1) + fibonacci(n-2)
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-k">def</span> <span class="pl-en">fibonacci</span>(<span class="pl-s1">n</span>):
+    <span class="pl-s">"""计算斐波那契数列"""</span>
+    <span class="pl-k">if</span> <span class="pl-s1">n</span> <span class="pl-c1">&lt;=</span> <span class="pl-c1">1</span>:
+        <span class="pl-k">return</span> <span class="pl-s1">n</span>
+    <span class="pl-k">return</span> <span class="pl-en">fibonacci</span>(<span class="pl-s1">n</span><span class="pl-c1">-</span><span class="pl-c1">1</span>) <span class="pl-c1">+</span> <span class="pl-en">fibonacci</span>(<span class="pl-s1">n</span><span class="pl-c1">-</span><span class="pl-c1">2</span>)
 
-result = [fibonacci(i) for i in range(10)]
-print(result)
-</code></pre>
+<span class="pl-s1">result</span> <span class="pl-c1">=</span> [<span class="pl-en">fibonacci</span>(<span class="pl-s1">i</span>) <span class="pl-k">for</span> <span class="pl-s1">i</span> <span class="pl-c1">in</span> <span class="pl-en">range</span>(<span class="pl-c1">10</span>)]
+<span class="pl-en">print</span>(<span class="pl-s1">result</span>)</pre></div>
 <h3>HTML/CSS 代码块</h3>
-<pre lang="html" class="notranslate"><code class="notranslate">&lt;div class="container"&gt;
-  &lt;h1&gt;欢迎来到我的网站&lt;/h1&gt;
-  &lt;p style="color: blue;"&gt;这是一个演示段落&lt;/p&gt;
-&lt;/div&gt;
-</code></pre>
+<div class="highlight highlight-text-html-basic"><pre class="notranslate"><span class="pl-kos">&lt;</span><span class="pl-ent">div</span> <span class="pl-c1">class</span>="<span class="pl-s">container</span>"<span class="pl-kos">&gt;</span>
+  <span class="pl-kos">&lt;</span><span class="pl-ent">h1</span><span class="pl-kos">&gt;</span>欢迎来到我的网站<span class="pl-kos">&lt;/</span><span class="pl-ent">h1</span><span class="pl-kos">&gt;</span>
+  <span class="pl-kos">&lt;</span><span class="pl-ent">p</span> <span class="pl-c1">style</span>="<span class="pl-s">color: blue;</span>"<span class="pl-kos">&gt;</span>这是一个演示段落<span class="pl-kos">&lt;/</span><span class="pl-ent">p</span><span class="pl-kos">&gt;</span>
+<span class="pl-kos">&lt;/</span><span class="pl-ent">div</span><span class="pl-kos">&gt;</span></pre></div>
 <h3>Bash 代码块</h3>
-<pre lang="bash" class="notranslate"><code class="notranslate">#!/bin/bash
-echo "开始部署..."
+<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#!</span>/bin/bash</span>
+<span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>开始部署...<span class="pl-pds">"</span></span>
 git pull origin main
 npm install
 npm run build
-echo "部署完成！"
-</code></pre>
+<span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>部署完成！<span class="pl-pds">"</span></span></pre></div>
 <hr>
 <h2>列表</h2>
 <h3>无序列表</h3>
@@ -288,7 +294,7 @@ echo "部署完成！"
 <p><a href="https://www.github.com" title="GitHub 官网">这是一个带标题的链接</a></p>
 <p><a href="./README.md">相对链接到项目 README</a></p>
 <h3>脚注链接</h3>
-<p>这是关于 Markdown 的更多信息 <sup><a href="#user-content-fn-1-50891d8f237bee0667210ed04713aaab" id="user-content-fnref-1-50891d8f237bee0667210ed04713aaab" data-footnote-ref="" aria-describedby="footnote-label">1</a></sup>。</p>
+<p>这是关于 Markdown 的更多信息 <sup><a href="#user-content-fn-1-a99f2c7e473950c944c5cef060c644f5" id="user-content-fnref-1-a99f2c7e473950c944c5cef060c644f5" data-footnote-ref="" aria-describedby="footnote-label">1</a></sup>。</p>
 <hr>
 <h2>任务列表</h2>
 <h3>项目计划</h3>
@@ -323,22 +329,20 @@ echo "部署完成！"
 <hr>
 <h2>代码块突出显示</h2>
 <h3>重要代码片段</h3>
-<pre lang="javascript" class="notranslate"><code class="notranslate">// 这是一个关键算法
-const optimizedSearch = (arr, target) =&gt; {
-  return arr.find(item =&gt; item.id === target);
-};
-</code></pre>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-c">// 这是一个关键算法</span>
+<span class="pl-k">const</span> <span class="pl-en">optimizedSearch</span> <span class="pl-c1">=</span> <span class="pl-kos">(</span><span class="pl-s1">arr</span><span class="pl-kos">,</span> <span class="pl-s1">target</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+  <span class="pl-k">return</span> <span class="pl-s1">arr</span><span class="pl-kos">.</span><span class="pl-en">find</span><span class="pl-kos">(</span><span class="pl-s1">item</span> <span class="pl-c1">=&gt;</span> <span class="pl-s1">item</span><span class="pl-kos">.</span><span class="pl-c1">id</span> <span class="pl-c1">===</span> <span class="pl-s1">target</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span><span class="pl-kos">;</span></pre></div>
 <h3>配置示例</h3>
-<pre lang="json" class="notranslate"><code class="notranslate">{
-  "name": "my-awesome-project",
-  "version": "1.0.0",
-  "scripts": {
-    "dev": "webpack-dev-server",
-    "build": "webpack",
-    "test": "jest"
+<div class="highlight highlight-source-json"><pre class="notranslate">{
+  <span class="pl-ent">"name"</span>: <span class="pl-s"><span class="pl-pds">"</span>my-awesome-project<span class="pl-pds">"</span></span>,
+  <span class="pl-ent">"version"</span>: <span class="pl-s"><span class="pl-pds">"</span>1.0.0<span class="pl-pds">"</span></span>,
+  <span class="pl-ent">"scripts"</span>: {
+    <span class="pl-ent">"dev"</span>: <span class="pl-s"><span class="pl-pds">"</span>webpack-dev-server<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"build"</span>: <span class="pl-s"><span class="pl-pds">"</span>webpack<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"test"</span>: <span class="pl-s"><span class="pl-pds">"</span>jest<span class="pl-pds">"</span></span>
   }
-}
-</code></pre>
+}</pre></div>
 <hr>
 <h2>总结</h2>
 <p>这个 Issue 展示了 GitHub Markdown 的主要功能：</p>
@@ -353,8 +357,8 @@ const optimizedSearch = (arr, target) =&gt; {
 <strong>状态：</strong> 📌 测试中</p>
 <section data-footnotes="" class="footnotes"><h2 id="footnote-label" class="sr-only">Footnotes</h2>
 <ol>
-<li id="user-content-fn-1-50891d8f237bee0667210ed04713aaab">
-<p>Markdown 是一种轻量级标记语言，由 John Gruber 在 2004 年创建。 <a href="#user-content-fnref-1-50891d8f237bee0667210ed04713aaab" data-footnote-backref="" aria-label="Back to reference 1" class="data-footnote-backref">↩</a></p>
+<li id="user-content-fn-1-a99f2c7e473950c944c5cef060c644f5">
+<p>Markdown 是一种轻量级标记语言，由 John Gruber 在 2004 年创建。 <a href="#user-content-fnref-1-a99f2c7e473950c944c5cef060c644f5" data-footnote-backref="" aria-label="Back to reference 1" class="data-footnote-backref">↩</a></p>
 </li>
 </ol>
 </section></div>
@@ -382,7 +386,7 @@ if(""!=""){
 </script></div>
 </body>
 <script>
-var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z', 'copy': 'M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z', 'check': 'M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z'};
 var utterancesLoad=0;
 
 let themeSettings={
@@ -456,7 +460,70 @@ function iFrameLoading(){
     }
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    const createClipboardHTML = (codeContent, additionalClasses = '') => `
+        <pre class="notranslate"><code class="notranslate">${codeContent}</code></pre>
+        <div class="clipboard-container position-absolute right-0 top-0 ${additionalClasses}">
+            <clipboard-copy class="ClipboardButton btn m-2 p-0" role="button" style="display: inherit;">
+                <svg height="16" width="16" class="octicon octicon-copy m-2"><path d="${IconList["copy"]}"></path></svg>
+                <svg height="16" width="16" class="octicon octicon-check color-fg-success m-2 d-none"><path d="${IconList["check"]}"></path></svg>
+            </clipboard-copy>
+            <div class="copy-feedback">Copied!</div>
+        </div>
+    `;
 
+    const handleCodeElements = (selector = '') => {
+        document.querySelectorAll(selector).forEach(codeElement => {
+            const codeContent = codeElement.innerHTML;
+            const newStructure = document.createElement('div');
+            newStructure.className = 'snippet-clipboard-content position-relative overflow-auto';
+            newStructure.innerHTML = createClipboardHTML(codeContent);
+
+            const parentElement = codeElement.parentElement;
+            if (selector.includes('highlight')) {
+                parentElement.insertBefore(newStructure, codeElement.nextSibling);
+                parentElement.removeChild(codeElement);
+            } else {
+                parentElement.parentElement.replaceChild(newStructure, parentElement);
+            }
+        });
+    };
+
+    handleCodeElements('pre.notranslate > code.notranslate');
+    handleCodeElements('div.highlight > pre.notranslate');
+
+    let currentFeedback = null;
+    document.querySelectorAll('clipboard-copy').forEach(copyButton => {
+        copyButton.addEventListener('click', () => {
+            const codeContent = copyButton.closest('.snippet-clipboard-content').innerText;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = codeContent;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+
+            const copyIcon = copyButton.querySelector('.octicon-copy');
+            const checkIcon = copyButton.querySelector('.octicon-check');
+            const copyFeedback = copyButton.nextElementSibling;
+
+            if (currentFeedback && currentFeedback !== copyFeedback) {currentFeedback.style.display = 'none';}
+            currentFeedback = copyFeedback;
+
+            copyIcon.classList.add('d-none');
+            checkIcon.classList.remove('d-none');
+            copyFeedback.style.display = 'block';
+            copyButton.style.borderColor = 'var(--color-success-fg)';
+
+            setTimeout(() => {
+                copyIcon.classList.remove('d-none');
+                checkIcon.classList.add('d-none');
+                copyFeedback.style.display = 'none';
+                copyButton.style.borderColor = '';
+            }, 2000);
+        });
+    });
+});
 
 </script>
 
